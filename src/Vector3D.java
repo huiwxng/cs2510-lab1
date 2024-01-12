@@ -54,7 +54,7 @@ public class Vector3D {
 
     public double angleBetween(Vector3D other) {
         double angle = Math.toDegrees(Math.acos(this.dotProduct(other)/(this.getMagnitude()*other.getMagnitude())));
-        if (angle == 0) throw new IllegalStateException();
+        if (this.getMagnitude() == 0 || other.getMagnitude() == 0) throw new IllegalStateException();
         return angle;
     }
 
